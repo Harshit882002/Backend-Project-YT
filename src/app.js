@@ -14,6 +14,14 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+
+// routes import 
+
+import userRouter from "./routes/user.route.js"
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
+
 export {app}
 
 // URL se jab bhi koi data ata hai vah req.params se ata hai.
